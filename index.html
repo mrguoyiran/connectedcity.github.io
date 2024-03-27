@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Connected City</title> <!-- 添加这一行来设置浏览器标签页标题 -->
     <!-- 添加预加载指令 -->
-    <link rel="preload" href="your-background-image.jpg" as="image">
+    <link rel="preload" href="bg.jpg" as="image">
     <style>
         body {
             margin: 0;
@@ -60,7 +60,22 @@
     </footer>
 
     <script>
+        // 获取当前年份并插入到id为'currentYear'的元素中
         document.getElementById('currentYear').textContent = new Date().getFullYear();
+
+        // 获取当前日期和时间，并格式化输出
+        function getCurrentDateTime() {
+            const now = new Date();
+            const options = { 
+                year: 'numeric', month: 'long', day: 'numeric',
+                hour: 'numeric', minute: 'numeric', second: 'numeric',
+                timeZone: Intl.DateTimeFormat().resolvedOptions().timeZone
+            };
+            return now.toLocaleString('default', options);
+        }
+
+        // 将当前日期和时间插入到id为'datetime'的元素中
+        document.getElementById('datetime').textContent = getCurrentDateTime();
     </script>
 </body>
 </html>
