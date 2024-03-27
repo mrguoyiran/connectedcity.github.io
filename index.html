@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Connected City</title> <!-- 添加这一行来设置浏览器标签页标题 -->
+    <!-- 添加预加载指令 -->
+    <link rel="preload" href="your-background-image.jpg" as="image">
     <style>
         body {
             margin: 0;
@@ -54,15 +56,11 @@
     </div>
 
     <footer>
-       &copy; <?php echo date('Y'); ?>  Yiran Guo All rights reserved.
+        &copy; <span id="currentYear"></span> Yiran Guo All rights reserved.
     </footer>
 
     <script>
-        function updateDateTime() {
-            document.getElementById('datetime').textContent = new Date().toLocaleString('default', {year: 'numeric', month: '2-digit', day: '2-digit', hour: '2-digit', minute: '2-digit', second: '2-digit'});
-        }
-
-        setInterval(updateDateTime, 1000);
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
     </script>
 </body>
 </html>
