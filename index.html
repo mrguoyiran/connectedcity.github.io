@@ -78,19 +78,22 @@
         // 获取当前年份并插入到id为'currentYear'的元素中
         document.getElementById('currentYear').textContent = new Date().getFullYear();
 
-        // 获取当前日期和时间，并格式化输出
-        function getCurrentDateTime() {
+        // 定义函数，用于更新页面上的日期和时间
+        function updateDateTime() {
             const now = new Date();
             const options = { 
                 year: 'numeric', month: 'long', day: 'numeric',
                 hour: 'numeric', minute: 'numeric', second: 'numeric',
                 timeZone: Intl.DateTimeFormat().resolvedOptions().timeZone
             };
-            return now.toLocaleString('default', options);
+            document.getElementById('datetime').textContent = now.toLocaleString('default', options);
         }
 
-        // 将当前日期和时间插入到id为'datetime'的元素中
-        document.getElementById('datetime').textContent = getCurrentDateTime();
+        // 在页面加载时首次更新日期和时间
+        updateDateTime();
+
+        // 设置定时器，每隔1秒更新一次日期和时间
+        setInterval(updateDateTime, 1000);
     </script>
 </body>
 </html>
