@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Connected City</title> <!-- 添加这一行来设置浏览器标签页标题 -->
+    <title>智联城境 Connected City</title> <!-- 添加这一行来设置浏览器标签页标题 -->
     <!-- 添加预加载指令 -->
     <link rel="preload" href="bg.jpg" as="image">
     <style>
@@ -46,18 +46,33 @@
             color: rgba(255, 255, 255, 0.8);
             font-size: 14px;
         }
+
+        /* 新增样式：日期和时间定位到右上角 */
+        .datetime-container {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            color: white;
+            font-size: 16px;
+        }
     </style>
 </head>
 <body>
     <div class="content">
-        <h1>CONNECTED CITY</h1>
-        <h2>EMBRACING INNOVATION FOR A SMARTER TOMORROW</h2>
-        <p id="datetime"></p>
+        <h1>智联城境</h1>
+        <h2>CONNECTED CITY</h2>
+        <h3>怀揽创新，构筑明日智慧盛景</h3>
+        <h3>Embracing Innovation for a Smarter Tomorrow</h3>
     </div>
 
     <footer>
         &copy; <span id="currentYear"></span> Yiran Guo All rights reserved.
     </footer>
+
+    <!-- 新增容器，用于放置日期和时间 -->
+    <div class="datetime-container">
+        <p id="datetime"></p>
+    </div>
 
     <script>
         // 获取当前年份并插入到id为'currentYear'的元素中
