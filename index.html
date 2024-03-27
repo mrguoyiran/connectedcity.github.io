@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Connected City</title> <!-- 添加这一行来设置浏览器标签页标题 -->
+    <style>
+        body {
+            margin: 0;
+            background-image: url("bg.png"); /* 替换为您的背景图片 */
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            font-family: Arial, sans-serif;
+        }
+
+        .content {
+            text-align: center;
+            color: white;
+            max-width: 600px;
+            padding: 50px;
+            background-color: rgba(0, 0, 0, 0.7); /* 调整透明度以适应背景图片 */
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+        }
+
+        h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            font-size: 36px;
+            margin-bottom: 40px;
+        }
+
+        footer {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <div class="content">
+        <h1>CONNECTED CITY</h1>
+        <h2>EMBRACING INNOVATION FOR A SMARTER TOMORROW</h2>
+        <p id="datetime"></p>
+    </div>
+
+    <footer>
+       &copy; <?php echo date('Y'); ?>  Yiran Guo All rights reserved.
+    </footer>
+
+    <script>
+        function updateDateTime() {
+            document.getElementById('datetime').textContent = new Date().toLocaleString('default', {year: 'numeric', month: '2-digit', day: '2-digit', hour: '2-digit', minute: '2-digit', second: '2-digit'});
+        }
+
+        setInterval(updateDateTime, 1000);
+    </script>
+</body>
+</html>
